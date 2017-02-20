@@ -1,0 +1,19 @@
+{
+    "name": "holabs/ui",
+    "description": "Form factory with bootstrap renderer and ITranslator auto inject",
+    "type": "library",
+    "license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+    "authors": [
+        {
+            "name": "Tomáš Holan",
+            "email": "mail@tomasholan.eu"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "nette/application": "~2.4",
+        "nette/di": "~2.4",
+        "nette/utils": "~2.4",
+        "nextras/forms": "~2.0"
+    }
+}
