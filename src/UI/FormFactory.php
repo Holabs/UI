@@ -14,7 +14,7 @@ use Nextras\Forms\Rendering\Bs3FormRenderer;
  */
 class FormFactory {
 
-	/** @var  ITranslator */
+	/** @var  ITranslator|null */
 	protected $translator;
 
 	/**
@@ -32,11 +32,7 @@ class FormFactory {
 	public function create(ITranslator $translator = NULL){
 		$form = new Form();
 		$form->setRenderer(new Bs3FormRenderer());
-		if ($translator === NULL){
-			$form->setTranslator($this->translator);
-		}else {
-			$form->setTranslator($translator);
-		}
+		$form->setTranslator($translator === NULL ? $this->translator : $translator);
 		return $form;
 	}
 
