@@ -3,12 +3,16 @@
 namespace Holabs\UI;
 
 use Nette\Application\UI\Control;
+use Nette\Bridges\ApplicationLatte\Template;
 use Nette\Localization\ITranslator;
 
 /**
  * @author       Tomáš Holan <mail@tomasholan.eu>
  * @package      holabs/ui
  * @copyright    Copyright © 2016, Tomáš Holan [www.tomasholan.eu]
+ *
+ * @property-read Template|\stdClass $template
+ * @method Template|\stdClass getTemplate()
  */
 abstract class BaseControl extends Control{
         
