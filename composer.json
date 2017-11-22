@@ -15,5 +15,8 @@
         "nette/di": "~2.4",
         "nette/utils": "~2.4",
         "nextras/forms": "~2.0"
-    }
+    },
+	"autoload": {
+		"classmap": ["src"]
+	}
 }
