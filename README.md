@@ -16,3 +16,15 @@ Installation
 ```sh
 composer require holabs\ui
 ```
+
+Configuration
+-------------
+You can define your Form class which will be created by formFactory default is `Holabs\UI\Form`
+```yaml
+extensions:
+	holabs.ui: Holabs\UI\Bridges\Nette\UIExtension
+	
+holabs.ui:
+	form-factory:
+		class: 'Holabs\UI\Form'
+```
