@@ -23,9 +23,10 @@ class FormFactory {
 	protected $translator;
 
 	/**
+	 * @param string	   $class
 	 * @param ITranslator|null $translator
 	 */
-	public function __construct(ITranslator $translator = NULL) {
+	public function __construct($class, ITranslator $translator = NULL) {
 		if (!class_exists($class)) {
 			throw new InvalidStateException("Class {$class} not exists");
 		}
