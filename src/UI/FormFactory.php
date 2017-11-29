@@ -3,6 +3,8 @@
 
 namespace Holabs\UI;
 
+use Nette\Application\UI\Form;
+use Nette\InvalidStateException;
 use Nette\Localization\ITranslator;
 use Nextras\Forms\Rendering\Bs3FormRenderer;
 
@@ -14,6 +16,9 @@ use Nextras\Forms\Rendering\Bs3FormRenderer;
  */
 class FormFactory {
 
+	/** @var  string */
+	protected $class;
+	
 	/** @var  ITranslator|null */
 	protected $translator;
 
@@ -21,6 +26,15 @@ class FormFactory {
 	 * @param ITranslator|null $translator
 	 */
 	public function __construct(ITranslator $translator = NULL) {
+		if (!class_exists($class)) {
+			throw new InvalidStateException("Class {$class} not exists");
+		}
+
+		if (!is_subclass_of($class, Form::class)) {
+			throw new InvalidStateException("Class {$class} must be child of " . Form::class);
+		}
+
+		$this->class = $class;
 		$this->translator = $translator;
 	}
 
@@ -30,7 +44,9 @@ class FormFactory {
 	 * @return Form
 	 */
 	public function create(ITranslator $translator = NULL){
-		$form = new Form();
+		$name = $this->class;
+		/** @var Form $form */
+		$form = new $name();
 		$form->setRenderer(new Bs3FormRenderer());
 		$form->setTranslator($translator === NULL ? $this->translator : $translator);
 		return $form;
