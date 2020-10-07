@@ -5,7 +5,7 @@ namespace Holabs\UI\Bridges\Nette;
 
 use Holabs\UI\Form;
 use Holabs\UI\FormFactory;
-use Nette\DI\Extensions\ExtensionsExtension;
+use Nette\DI\CompilerExtension;
 
 
 /**
@@ -13,7 +13,7 @@ use Nette\DI\Extensions\ExtensionsExtension;
  * @package      holabs/ui
  * @copyright    Copyright © 2016, Tomáš Holan [www.tomasholan.eu]
  */
-class UIExtension extends ExtensionsExtension {
+class UIExtension extends CompilerExtension {
 
 	/** @var array */
 	public $defaults = [
