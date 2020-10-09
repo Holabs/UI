@@ -26,7 +26,6 @@ abstract class BaseControl extends Control{
 	 * @param ITranslator|null $translator
 	 */
 	public function __construct(ITranslator $translator = NULL) {
-		parent::__construct();
 		$this->translator = $translator;
 	}
 
