@@ -6,7 +6,7 @@ namespace Holabs\UI;
 use Nette\Application\UI\Form;
 use Nette\InvalidStateException;
 use Nette\Localization\ITranslator;
-use Nextras\Forms\Rendering\Bs3FormRenderer;
+use Nextras\FormsRendering\Renderers\Bs3FormRenderer;
 
 
 /**
